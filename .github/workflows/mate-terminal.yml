@@ -28,3 +28,11 @@ jobs:
       - name: init submodules
         run: git submodule init
         working-directory: mate-terminal/
+      
+      - name: pull git submodules
+        run: git submodule update --remote --recursive
+        working-directory: mate-teminal/
+      
+      - name: get directory
+        run: ls -lah
+        working-directory: mate-terminal/
