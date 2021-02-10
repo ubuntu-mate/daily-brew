@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: installing dependancies
-        run: apt install -y dh-make
+        run: sudo apt install -y dh-make
       - name: clone upstream code
         run: git clone https://github.com/mate-desktop/mate-terminal
         
