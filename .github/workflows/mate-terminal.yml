@@ -61,3 +61,8 @@ jobs:
       - name: build full package for test
         run: dpkg-buildpackage -d -S -sa -uc -us
         working-directory: mate-terminal/
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: mate-terminal*.deb
