@@ -55,7 +55,8 @@ jobs:
           echo "mate-terminal (1.25.0-$GITHUB_RUN_NUMBER) hirsute; urgency=medium
             *  automated build
             Ubuntu MATE Packaging Bot <guardians@ubuntu-mate.org> $DATE_STRING" >> version
-          cat version mate-terminal/debian/changelog > mate-terminal/debian/changelog
+          cat version mate-terminal/debian/changelog > version2
+          cat version2 > mate-terminal/debian/changelog
         
       - name: build full package for test
         run: dpkg-buildpackage -d -S -sa -uc -us
