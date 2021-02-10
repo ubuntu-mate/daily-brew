@@ -43,8 +43,17 @@ jobs:
       - name: move debiandirectory
         run: mv mateterminal-debian/mate-terminal/debian/ mate-terminal/debian/
         
-      - name: get directory
+      - name: change to native package
+        run: echo "3.0 (native)" >> format
+        working-directory: mate-terminal/debian/source/
+        
+      - name: build full package for test
+        run: dpkg-buildpackage -d -S -sa -uc -us
+        working-directory: mate-terminal/
+      
+      - name: output
         run: ls -lah
         working-directory: mate-terminal/
-        
-        
+      
+      - name: output
+        run: ls -lah
