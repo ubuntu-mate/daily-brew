@@ -37,7 +37,7 @@ jobs:
         run: mkdir mateterminal-debian
         
       - name: clone upstream debain packaging
-        run: git clone https://salsa.debian.org/debian-mate-team/mate-terminal/-/tree/master/debian
+        run: git clone https://salsa.debian.org/debian-mate-team/mate-terminal
         working-directory: mateterminal-debian
         
       - name: move debiandirectory
