@@ -48,6 +48,14 @@ jobs:
       - name: change to native package
         run: echo "3.0 (native)" > format
         working-directory: mate-terminal/debian/source/
+      
+      - name: setting version to 1.25.RUN_NUMBER
+        working-directory: mate-terminal/
+        run: |
+          DATE_STRING=date +"%a, %d %b %Y %H:%M:%S %z"
+          echo "mate-terminal (1.25.$GITHUB_RUN_NUMBER) hirsute; urgency=medium
+            *  automated build
+            Ubuntu MATE Packaging Bot <guardians@ubuntu-mate.org> $DATE_STRING" >> version
         
       - name: build full package for test
         run: dpkg-buildpackage -d -S -sa -uc -us
