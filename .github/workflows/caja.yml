@@ -44,7 +44,7 @@ jobs:
         working-directory: caja-debian
         
       - name: move debiandirectory
-        run: mv caja-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv caja-debian/caja/debian/ caja/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

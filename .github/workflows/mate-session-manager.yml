@@ -44,7 +44,7 @@ jobs:
         working-directory: mate-session-manager-debian
         
       - name: move debiandirectory
-        run: mv mate-session-manager-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv mate-session-manager-debian/mate-session-manager/debian/ mate-session-manager/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

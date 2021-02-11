@@ -44,7 +44,7 @@ jobs:
         working-directory: python-caja-debian
         
       - name: move debiandirectory
-        run: mv python-caja-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv python-caja-debian/python-caja/debian/ python-caja/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

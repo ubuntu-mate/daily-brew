@@ -44,7 +44,7 @@ jobs:
         working-directory: engrampa-debian
         
       - name: move debiandirectory
-        run: mv engrampa-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv engrampa-debian/engrampa/debian/ engrampa/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

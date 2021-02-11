@@ -44,7 +44,7 @@ jobs:
         working-directory: mate-netbook-debian
         
       - name: move debiandirectory
-        run: mv mate-netbook-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv mate-netbook-debian/mate-netbook/debian/ mate-netbook/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

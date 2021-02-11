@@ -44,7 +44,7 @@ jobs:
         working-directory: libmatemixer-debian
         
       - name: move debiandirectory
-        run: mv libmatemixer-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv libmatemixer-debian/libmatemixer/debian/ libmatemixer/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

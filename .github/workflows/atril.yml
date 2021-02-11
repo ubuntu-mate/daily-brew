@@ -44,7 +44,7 @@ jobs:
         working-directory: atril-debian
         
       - name: move debiandirectory
-        run: mv atril-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv atril-debian/atril/debian/ atril/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format
