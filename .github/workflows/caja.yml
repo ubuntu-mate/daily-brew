@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: mate-terminal
+name: caja
 
 # Controls when the action will run. 
 on:
@@ -26,39 +26,39 @@ jobs:
         run: sudo apt install -y dh-make
 
       - name: clone upstream code
-        run: git clone https://github.com/mate-desktop/mate-terminal
+        run: git clone https://github.com/mate-desktop/caja
         
       - name: init submodules
         run: git submodule init
-        working-directory: mate-terminal/
+        working-directory: caja/
       
       - name: pull git submodules
         run: git submodule update --remote --recursive
-        working-directory: mate-terminal/
+        working-directory: caja/
       
       - name: make directory
-        run: mkdir mate-terminal-debian
+        run: mkdir caja-debian
         
       - name: clone upstream debain packaging
-        run: git clone https://salsa.debian.org/debian-mate-team/mate-terminal
-        working-directory: mate-terminal-debian
+        run: git clone https://salsa.debian.org/debian-mate-team/caja
+        working-directory: caja-debian
         
       - name: move debiandirectory
-        run: mv mate-terminal-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv caja-debian/mate-terminal/debian/ mate-terminal/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format
-        working-directory: mate-terminal/debian/source/
+        working-directory: caja/debian/source/
       
       - name: setting version to VERSION-RUN_NUMBER
         run: |
           DATE_STRING=$(date +"%a, %d %b %Y %H:%M:%S %z")
-          echo "mate-terminal (1.25.0-$GITHUB_RUN_NUMBER) hirsute; urgency=medium
+          echo "caja (1.25.0-$GITHUB_RUN_NUMBER) hirsute; urgency=medium
             *  automated build
             Ubuntu MATE Packaging Bot <guardians@ubuntu-mate.org> $DATE_STRING" >> version
-          cat version mate-terminal/debian/changelog > version2
-          cat version2 > mate-terminal/debian/changelog
+          cat version caja/debian/changelog > version2
+          cat version2 > caja/debian/changelog
         
       - name: build full package for test
         run: dpkg-buildpackage -d -S -sa -uc -us
-        working-directory: mate-terminal/
+        working-directory: caja/
