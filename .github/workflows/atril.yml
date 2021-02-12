@@ -62,3 +62,6 @@ jobs:
       - name: build full package for test
         run: dpkg-buildpackage -d -S -sa -uc -us
         working-directory: atril/
+      
+      - name: get directory
+        run: ls -lah
