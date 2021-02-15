@@ -71,6 +71,10 @@ jobs:
       - name: build full package for test
         run: dpkg-buildpackage -d -S -sa --sign-key=C77F46B50E6C36E037F9073F6D69B53ED298168C
         working-directory: mate-terminal/
+        
+      - name: sign
+        run: |
+          debsign -k C77F46B50E6C36E037F9073F6D69B53ED298168C ./*.changes
       
       - name: get ls
         run: ls -lah
