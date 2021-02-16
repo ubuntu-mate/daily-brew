@@ -59,6 +59,18 @@ jobs:
           cat version mate-sensors-applet/debian/changelog > version2
           cat version2 > mate-sensors-applet/debian/changelog
         
+      - name: Prepare GPG Signing Key
+        run: |
+          mkdir -p ~/.gnupg/
+          chmod 700 ~/.gnupg
+          printf "$BOT_GPG_KEY_BASE64" | base64 --decode > ~/.gnupg/private.key
+          gpg --import ~/.gnupg/private.key
+        env:
+          BOT_GPG_KEY_BASE64: ${{ secrets.BOT_GPG_KEY_BASE64 }}
+        
       - name: build full package for test
-        run: dpkg-buildpackage -d -S -sa -uc -us
-        working-directory: mate-sensors-applet/
+        run: dpkg-buildpackage -d -S -sa --sign-key=C77F46B50E6C36E037F9073F6D69B53ED298168C
+        working-directory: mate-terminal/
+      
+      - name: upload to ppa
+        run: dput ppa:ubuntu-mate-bot/daily-brew ./*.changes
