@@ -55,7 +55,7 @@ jobs:
           DATE_STRING=$(date +"%a, %d %b %Y %H:%M:%S %z")
           echo "libmateweather (1.25.0-$GITHUB_RUN_NUMBER) hirsute; urgency=medium
             *  automated build
-            Ubuntu MATE Packaging Bot <guardians@ubuntu-mate.org> $DATE_STRING" >> version
+           -- Ubuntu MATE Packaging Bot <guardians@ubuntu-mate.org>  $DATE_STRING" >> version
           cat version libmateweather/debian/changelog > version2
           cat version2 > libmateweather/debian/changelog
         
