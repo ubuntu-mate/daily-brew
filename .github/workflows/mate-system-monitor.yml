@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: installing dependancies
-        run: sudo apt install -y dh-make devscripts devscripts
+        run: sudo apt install -y dh-make devscripts
 
       - name: clone upstream code
         run: git clone https://github.com/mate-desktop/mate-system-monitor
