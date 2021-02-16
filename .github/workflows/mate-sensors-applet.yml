@@ -44,7 +44,7 @@ jobs:
         working-directory: mate-sensors-applet-debian
         
       - name: move debiandirectory
-        run: mv mate-sensors-applet-debian/mate-sensors-applet/debian/ mate-sensor-applet/debian/
+        run: mv mate-sensors-applet-debian/mate-sensors-applet/debian/ mate-sensors-applet/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format
