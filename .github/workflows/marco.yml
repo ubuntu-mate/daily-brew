@@ -44,7 +44,7 @@ jobs:
         working-directory: marco-debian
         
       - name: move debiandirectory
-        run: mv marco-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv marco-debian/libmarco/debian/ libmarco/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

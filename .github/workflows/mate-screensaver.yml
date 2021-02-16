@@ -44,7 +44,7 @@ jobs:
         working-directory: mate-screensaver-debian
         
       - name: move debiandirectory
-        run: mv mate-screensaver-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv mate-screensaver-debian/mate-screensaver/debian/ mate-screensaver/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

@@ -44,7 +44,7 @@ jobs:
         working-directory: mate-applets-debian
         
       - name: move debiandirectory
-        run: mv mate-applets-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv mate-applets-debian/mate-applets/debian/ mate-applets/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

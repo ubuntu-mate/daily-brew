@@ -44,7 +44,7 @@ jobs:
         working-directory: mate-calc-debian
         
       - name: move debiandirectory
-        run: mv mate-calc-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv mate-calc-debian/mate-calc/debian/ mate-calc/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

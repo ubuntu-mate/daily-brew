@@ -44,7 +44,7 @@ jobs:
         working-directory: eom-debian
         
       - name: move debiandirectory
-        run: mv eom-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv eom-debian/eom/debian/ eom/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

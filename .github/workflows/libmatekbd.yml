@@ -44,7 +44,7 @@ jobs:
         working-directory: libmatekbd-debian
         
       - name: move debiandirectory
-        run: mv libmatekbd-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv libmatekbd-debian/libmatekbd/debian/ libmatekbd/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format

@@ -44,7 +44,7 @@ jobs:
         working-directory: mate-icon-theme-debian
         
       - name: move debiandirectory
-        run: mv mate-icon-theme-debian/mate-terminal/debian/ mate-terminal/debian/
+        run: mv mate-icon-theme-debian/mate-icon-theme/debian/ mate-icon-theme/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format
