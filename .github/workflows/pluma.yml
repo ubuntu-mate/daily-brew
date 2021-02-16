@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: installing dependancies
-        run: sudo apt install -y dh-make gobject-introspection
+        run: sudo apt install -y dh-make devscripts devscripts
 
       - name: clone upstream code
         run: git clone https://github.com/mate-desktop/pluma
@@ -44,7 +44,7 @@ jobs:
         working-directory: pluma-debian
         
       - name: move debiandirectory
-        run: mv pluma-debian/pluma/debian/ pluma/debian/
+        run: mv pluma-debian/mate-terminal/debian/ mate-terminal/debian/
         
       - name: change to native package
         run: echo "3.0 (native)" > format
@@ -70,7 +70,8 @@ jobs:
         
       - name: build full package for test
         run: dpkg-buildpackage -d -S -sa --sign-key=C77F46B50E6C36E037F9073F6D69B53ED298168C
-        working-directory: mate-terminal/
+        working-directory: pluma/
       
       - name: upload to ppa
         run: dput ppa:ubuntu-mate-bot/daily-brew ./*.changes
+       
