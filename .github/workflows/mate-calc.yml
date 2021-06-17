@@ -38,7 +38,7 @@ jobs:
         run: mkdir mate-calc-debian
         
       - name: clone upstream debain packaging
-        run: git clone https://salsa.debian.org/debian-mate-team/mate-calc
+        run: git clone https://salsa.debian.org/bigpod-guest/mate-calc
         working-directory: mate-calc-debian
         
       - name: move debiandirectory
