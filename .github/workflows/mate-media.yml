@@ -51,7 +51,7 @@ jobs:
       - name: setting version to VERSION-RUN_NUMBER
         run: |
           DATE_STRING=$(date +"%a, %d %b %Y %H:%M:%S %z")
-          echo "mate-media (1.25.0-$GITHUB_RUN_NUMBER) hirsute; urgency=medium
+          echo "mate-media (1.25.3-$GITHUB_RUN_NUMBER) hirsute; urgency=medium
             *  automated build
            -- Ubuntu MATE Packaging Bot <guardians@ubuntu-mate.org>  $DATE_STRING" >> version
           cat version mate-media/debian/changelog > version2
