@@ -38,7 +38,7 @@ jobs:
         run: mkdir mate-applets-debian
         
       - name: clone upstream debain packaging
-        run: git clone https://salsa.debian.org/debian-mate-team/mate-applets
+        run: git clone https://salsa.debian.org/bigpod-guest/mate-applets
         working-directory: mate-applets-debian
         
       - name: move debiandirectory
